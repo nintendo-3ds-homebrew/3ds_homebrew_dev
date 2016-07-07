@@ -29,7 +29,7 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source
+SOURCES		:=	source/
 DATA		:=	data
 INCLUDES	:=	include
 #ROMFS		:=	romfs
@@ -140,6 +140,10 @@ clean:
 	@echo clean ...
 	@rm -fr $(BUILD) $(TARGET).3dsx $(OUTPUT).smdh $(TARGET).elf
 
+#---------------------------------------------------------------------------------
+run:
+	@make
+	@../citra_emu/citra ./first_app.3dsx
 
 #---------------------------------------------------------------------------------
 else
