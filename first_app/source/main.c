@@ -1,6 +1,5 @@
 #include <string.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <3ds.h>
 
 /*void drawpixel(u8* screen, u32 x,u32 y,u8 r,u8 g, u8 b) */
@@ -25,8 +24,8 @@ void setPixel(u8 *fb, u16 x, u16 y, u8 red, u8 green, u8 blue)
 
 int main(void)
 {
-	int x = 30;
-	int y = 30;
+	int x = 10;
+	int y = 10;
 	int i = 0;
 	PrintConsole bottomScreen;
 	gfxInitDefault();
@@ -38,31 +37,30 @@ int main(void)
 
 	while (aptMainLoop())
 	{
-		sleep(100);
-			gspWaitForVBlank();
-			hidScanInput();
-			// Your code goes here
-			u32 kDown = hidKeysDown();
-			if (kDown & KEY_START)
-				break; // break in order to return to hbmenu
-			// Example rendering code that displays a white pixel
-			// Please note that the 3DS screens are sideways (thus 240x400 and 240x320)
-			u8* fb = gfxGetFramebuffer(GFX_TOP, GFX_LEFT, NULL, NULL);
-			while (y < 200)
+		gspWaitForVBlank();
+		hidScanInput();
+		// Your code goes here
+		u32 kDown = hidKeysDown();
+		if (kDown & KEY_START)
+			break; // break in order to return to hbmenu
+		// Example rendering code that displays a white pixel
+		// Please note that the 3DS screens are sideways (thus 240x400 and 240x320)
+		u8* fb = gfxGetFramebuffer(GFX_TOP, GFX_LEFT, NULL, NULL);
+		while (y < 200)
+		{
+			while (x < 200)
 			{
-				while (x < 200)
-				{
-					setPixel(fb, x, y, 0xFF, 0xFF, 0xFF);
-					x++;
-				}
-				x = 30;
-				y++;
+				setPixel(fb, x, y, 0xFF, 0xFF, 0xFF);
+				x++;
 			}
-			if (kDown & KEY_SELECT)
-				memset(fb, 0, 240*400*3);
-			// Flush and swap framebuffers
-			gfxFlushBuffers();
-			gfxSwapBuffers();
+			x = 10;
+			y++;
+		}
+		if (kDown & KEY_SELECT)
+			memset(fb, 0, 240*400*3);
+		// Flush and swap framebuffers
+		gfxFlushBuffers();
+		gfxSwapBuffers();
 	}
 	gfxExit();
 	return 0;

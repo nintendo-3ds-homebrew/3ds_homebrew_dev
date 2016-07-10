@@ -34,6 +34,10 @@ DATA		:=	data
 INCLUDES	:=	include
 #ROMFS		:=	romfs
 
+APP_TITLE := First App
+APP_DESCRIPTION := No description
+APP_AUTHOR := SegmentationFault
+
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
