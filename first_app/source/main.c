@@ -1,4 +1,4 @@
-#include "../lib3dsft/include/lib3dsft.h"
+#include "../include/lib3dsft.h"
 
 int main(void)
 {
