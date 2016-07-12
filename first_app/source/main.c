@@ -1,42 +1,4 @@
-#include <string.h>
-#include <stdio.h>
-#include <3ds.h>
-#include <math.h>
-
-void setPixel(u8 *fb, u16 x, u16 y, u8 red, u8 green, u8 blue)
-{
-	fb[3 * (240 - y + (x - 1) * 240)] = blue;
-	fb[3 * (240 - y + (x - 1) * 240) + 1] = green;
-	fb[3 * (240 - y + (x - 1) * 240) + 2] = red;
-}
-
-void	drawRect(u8 *fb, int x1, int x2, int y1, int y2)
-{
-	int	save_x = x1;
-
-	while (y1 < y2)
-	{
-		while (x1 < x2)
-		{
-			if (y1 >= 1 && y1 <= 240)
-				if (x1 >= 1 && x1 <= 320)
-					setPixel(fb, x1, y1, 0xFF, 0x00, 0x00);
-			x1++;
-		}
-		x1 = save_x;
-		y1++;
-	}
-}
-
-void	drawEllipse(u8 *fb, int x, int y)
-{
-
-}
-
-void	clear_image(u8 *fb)
-{
-	memset(fb, 0, 240*400*3);
-}
+#include "../lib3dsft/include/lib3dsft.h"
 
 int main(void)
 {
@@ -72,9 +34,9 @@ int main(void)
 		// Example rendering code that displays a white pixel
 		// Please note that the 3DS screens are sideways (thus 240x400 and 240x320)
 		u8* fb = gfxGetFramebuffer(GFX_BOTTOM, GFX_LEFT, NULL, NULL);
-		drawRect(fb, x1, x2, y1, y2);
+		draw_rect(fb, x1, x2, y1, y2);
 		if (kDown & KEY_SELECT)
-			memset(fb, 0, 240*400*3);
+			clear_image(fb);
 		if (kDown & KEY_RIGHT)
 		{
 			x1+=10;
@@ -100,7 +62,7 @@ int main(void)
 		{
 			x = h + r*cos(tetha);
 			y = k + r*sin(tetha);
-			setPixel(fb, x, y, 0x00, 0xFF, 0x00);
+			put_pixel(fb, x, y, 0x00, 0xFF, 0x00);
 			tetha++;
 		}
 		// Flush and swap framebuffers
