@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <3ds.h>
+#include <math.h>
 
 void setPixel(u8 *fb, u16 x, u16 y, u8 red, u8 green, u8 blue)
 {
@@ -18,12 +19,18 @@ void	drawRect(u8 *fb, int x1, int x2, int y1, int y2)
 		while (x1 < x2)
 		{
 			if (y1 >= 1 && y1 <= 240)
-				setPixel(fb, x1, y1, 0xFF, 0xFF, 0xFF);
+				if (x1 >= 1 && x1 <= 320)
+					setPixel(fb, x1, y1, 0xFF, 0x00, 0x00);
 			x1++;
 		}
 		x1 = save_x;
 		y1++;
 	}
+}
+
+void	drawEllipse(u8 *fb, int x, int y)
+{
+
 }
 
 void	clear_image(u8 *fb)
@@ -50,6 +57,13 @@ int main(void)
 	gfxSetDoubleBuffering(GFX_BOTTOM, false);
 	while (aptMainLoop())
 	{
+		int step = 15;
+		int h = 100;
+		int k = 100;
+		int r = 50;
+		int tetha = 1;
+		int x = 0;
+		int y = 0;
 		hidScanInput();
 		// Your code goes here
 		u32 kDown = hidKeysHeld(); // hidKeysHeld fonction de key repeat
@@ -63,23 +77,31 @@ int main(void)
 			memset(fb, 0, 240*400*3);
 		if (kDown & KEY_RIGHT)
 		{
-			x1++;
-			x2++;
+			x1+=10;
+			x2+=10;
 		}
 		if (kDown & KEY_LEFT)
 		{
-			x1--;
-			x2--;
+			x1-=10;
+			x2-=10;
 		}
 		if (kDown & KEY_UP)
 		{
-			y1--;
-			y2--;
+			y1-=10;
+			y2-=10;
 		}
 		if (kDown & KEY_DOWN)
 		{
-			y1++;
-			y2++;
+			y1+=10;
+			y2+=10;
+			y--;
+		}
+		while (tetha <= 360)
+		{
+			x = h + r*cos(tetha);
+			y = k + r*sin(tetha);
+			setPixel(fb, x, y, 0x00, 0xFF, 0x00);
+			tetha++;
 		}
 		// Flush and swap framebuffers
 		/*gfxFlushBuffers();*/
