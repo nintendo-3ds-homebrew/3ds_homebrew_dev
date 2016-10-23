@@ -1,0 +1,14 @@
+*.d
+*.o
+*.project
+*.cproject
+*.3dsx
+*.cia
+*.cxi
+*.ncch
+*.3ds
+*.elf
+*.smdh
+build/
+lib/
+.settings/
