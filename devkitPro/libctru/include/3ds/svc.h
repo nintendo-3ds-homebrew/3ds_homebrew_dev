@@ -90,6 +90,13 @@ typedef enum {
 ///@name Multithreading
 ///@{
 
+/// Reset types (for use with events and timers)
+typedef enum {
+	RESET_ONESHOT = 0, ///< When the primitive is signaled, it will wake up exactly one thread and will clear itself automatically.
+	RESET_STICKY  = 1, ///< When the primitive is signaled, it will wake up all threads and it won't clear itself automatically.
+	RESET_PULSE   = 2, ///< Only meaningful for timers: same as ONESHOT but it will periodically signal the timer instead of just once.
+} ResetType;
+
 /// Types of thread info.
 typedef enum {
 	THREADINFO_TYPE_UNKNOWN ///< Unknown.
@@ -238,6 +245,40 @@ typedef struct {
 		MapEvent map;                    ///< Map event data.
 	};
 } DebugEventInfo;
+
+///@}
+
+///@name Processes
+///@{
+
+/// Information on address space for process. All sizes are in pages (0x1000 bytes)
+typedef struct {
+	u8 name[8];           ///< ASCII name of codeset
+	u16 unk1;
+	u16 unk2;
+	u32 unk3;
+	u32 text_addr;        ///< .text start address
+	u32 text_size;        ///< .text number of pages
+	u32 ro_addr;          ///< .rodata start address
+	u32 ro_size;          ///< .rodata number of pages
+	u32 rw_addr;          ///< .data, .bss start address
+	u32 rw_size;          ///< .data number of pages
+	u32 text_size_total;  ///< total pages for .text (aligned)
+	u32 ro_size_total;    ///< total pages for .rodata (aligned)
+	u32 rw_size_total;    ///< total pages for .data, .bss (aligned)
+	u32 unk4;
+	u64 program_id;       ///< Program ID
+} CodeSetInfo;
+
+/// Information for the main thread of a process.
+typedef struct
+{
+	int priority;   ///< Priority of the main thread.
+	u32 stack_size; ///< Size of the stack of the main thread.
+	int argc;       ///< Unused on retail kernel.
+	u16* argv;      ///< Unused on retail kernel.
+	u16* envp;      ///< Unused on retail kernel.
+} StartupInfo;
 
 ///@}
 
@@ -487,6 +528,48 @@ Result svcCreatePort(Handle* portServer, Handle* portClient, const char* name, s
  * @param portName Name of the port.
  */
 Result svcConnectToPort(volatile Handle* out, const char* portName);
+
+/**
+ * @brief Sets up virtual address space for a new process
+ * @param[out] out Pointer to output the code set handle to.
+ * @param info Description for setting up the addresses
+ * @param code_ptr Pointer to .text in shared memory
+ * @param ro_ptr Pointer to .rodata in shared memory
+ * @param data_ptr Pointer to .data in shared memory
+ */
+Result svcCreateCodeSet(Handle* out, const CodeSetInfo *info, void* code_ptr, void* ro_ptr, void* data_ptr);
+
+/**
+ * @brief Sets up virtual address space for a new process
+ * @param[out] out Pointer to output the process handle to.
+ * @param codeset Codeset created for this process
+ * @param arm11kernelcaps ARM11 Kernel Capabilities from exheader
+ * @param arm11kernelcaps_num Number of kernel capabilities
+ */
+Result svcCreateProcess(Handle* out, Handle codeset, const u32 *arm11kernelcaps, u32 arm11kernelcaps_num);
+
+/**
+ * @brief Sets a process's affinity mask.
+ * @param process Handle of the process.
+ * @param affinitymask Pointer to retrieve the affinity masks from.
+ * @param processorcount Number of processors.
+ */
+Result svcSetProcessAffinityMask(Handle process, const u8* affinitymask, s32 processorcount);
+
+/**
+ * Sets a process's ideal processor.
+ * @param process Handle of the process.
+ * @param processorid ID of the thread's ideal processor.
+ */
+Result svcSetProcessIdealProcessor(Handle process, s32 processorid);
+
+/**
+ * Launches the main thread of the process.
+ * @param process Handle of the process.
+ * @param info Pointer to a StartupInfo structure describing information for the main thread.
+ */
+Result svcRun(Handle process, const StartupInfo* info);
+
 ///@}
 
 ///@name Multithreading
@@ -559,7 +642,7 @@ Result svcGetThreadAffinityMask(u8* affinitymask, Handle thread, s32 processorco
  * @param affinitymask Pointer to retrieve the affinity masks from.
  * @param processorcount Number of processors.
  */
-Result svcSetThreadAffinityMask(Handle thread, u8* affinitymask, s32 processorcount);
+Result svcSetThreadAffinityMask(Handle thread, const u8* affinitymask, s32 processorcount);
 
 /**
  * @brief Gets a thread's ideal processor.
@@ -587,6 +670,31 @@ s32    svcGetProcessorID(void);
  * @param handle Handle of the thread.
  */
 Result svcGetThreadId(u32 *out, Handle handle);
+
+/**
+ * @brief Gets the resource limit set of a process.
+ * @param[out] resourceLimit Pointer to output the resource limit set handle to.
+ * @param process Process to get the resource limits of.
+ */
+Result svcGetResourceLimit(Handle* resourceLimit, Handle process);
+
+/**
+ * @brief Gets the value limits of a resource limit set.
+ * @param[out] values Pointer to output the value limits to.
+ * @param resourceLimit Resource limit set to use.
+ * @param names Resource limit names to get the limits of.
+ * @param nameCount Number of resource limit names.
+ */
+Result svcGetResourceLimitLimitValues(s64* values, Handle resourceLimit, u32* names, s32 nameCount);
+
+/**
+ * @brief Gets the values of a resource limit set.
+ * @param[out] values Pointer to output the values to.
+ * @param resourceLimit Resource limit set to use.
+ * @param names Resource limit names to get the values of.
+ * @param nameCount Number of resource limit names.
+ */
+Result svcGetResourceLimitCurrentValues(s64* values, Handle resourceLimit, u32* names, s32 nameCount);
 
 /**
  * @brief Gets the process ID of a thread.
@@ -640,9 +748,9 @@ Result svcReleaseSemaphore(s32* count, Handle semaphore, s32 release_count);
 /**
  * @brief Creates an event handle.
  * @param[out] event Pointer to output the created event handle to.
- * @param reset_type Type of reset the event uses.
+ * @param reset_type Type of reset the event uses (RESET_ONESHOT/RESET_STICKY).
  */
-Result svcCreateEvent(Handle* event, u8 reset_type);
+Result svcCreateEvent(Handle* event, ResetType reset_type);
 
 /**
  * @brief Signals an event.
@@ -720,6 +828,22 @@ Result svcAcceptSession(Handle* session, Handle port);
  * @param replyTarget Handle of the session to reply to.
  */
 Result svcReplyAndReceive(s32* index, Handle* handles, s32 handleCount, Handle replyTarget);
+
+/**
+ * @brief Binds an event handle to an ARM11 interrupt.
+ * @param interruptId Interrupt identfier (see https://www.3dbrew.org/wiki/ARM11_Interrupts).
+ * @param event Event handle to bind to the given interrupt.
+ * @param priority Priority of the interrupt for the current process.
+ * @param isManualClear Indicates whether the interrupt has to be manually cleared or not.
+ */
+Result svcBindInterrupt(u32 interruptId, Handle event, s32 priority, bool isManualClear);
+
+/**
+ * @brief Unbinds an event handle from an ARM11 interrupt.
+ * @param interruptId Interrupt identfier, see (see https://www.3dbrew.org/wiki/ARM11_Interrupts).
+ * @param event Event handle to unbind from the given interrupt.
+ */
+Result svcUnbindInterrupt(u32 interruptId, Handle event);
 ///@}
 
 ///@name Time
@@ -729,7 +853,7 @@ Result svcReplyAndReceive(s32* index, Handle* handles, s32 handleCount, Handle r
  * @param[out] timer Pointer to output the handle of the created timer to.
  * @param reset_type Type of reset to perform on the timer.
  */
-Result svcCreateTimer(Handle* timer, u8 reset_type);
+Result svcCreateTimer(Handle* timer, ResetType reset_type);
 
 /**
  * @brief Sets a timer.

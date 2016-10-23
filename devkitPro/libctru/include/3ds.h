@@ -14,6 +14,7 @@ extern "C" {
 #include <3ds/ipc.h>
 #include <3ds/svc.h>
 #include <3ds/srv.h>
+#include <3ds/errf.h>
 #include <3ds/os.h>
 #include <3ds/synchronization.h>
 #include <3ds/thread.h>
@@ -28,6 +29,7 @@ extern "C" {
 
 #include <3ds/services/ac.h>
 #include <3ds/services/am.h>
+#include <3ds/services/ampxi.h>
 #include <3ds/services/apt.h>
 #include <3ds/services/cam.h>
 #include <3ds/services/cfgnor.h>
@@ -39,16 +41,21 @@ extern "C" {
 #include <3ds/services/gsplcd.h>
 #include <3ds/services/hid.h>
 #include <3ds/services/irrst.h>
+#include <3ds/services/sslc.h>
 #include <3ds/services/httpc.h>
+#include <3ds/services/uds.h>
+#include <3ds/services/ndm.h>
 #include <3ds/services/ir.h>
 #include <3ds/services/ns.h>
 #include <3ds/services/pm.h>
 #include <3ds/services/ps.h>
 #include <3ds/services/ptmu.h>
 #include <3ds/services/ptmsysm.h>
+#include <3ds/services/pxidev.h>
 #include <3ds/services/soc.h>
 #include <3ds/services/mic.h>
 #include <3ds/services/mvd.h>
+#include <3ds/services/nfc.h>
 #include <3ds/services/news.h>
 #include <3ds/services/qtm.h>
 #include <3ds/services/srvpm.h>
@@ -57,15 +64,17 @@ extern "C" {
 
 #include <3ds/gpu/gx.h>
 #include <3ds/gpu/gpu.h>
-#include <3ds/gpu/gpu-old.h>
 #include <3ds/gpu/shbin.h>
 #include <3ds/gpu/shaderProgram.h>
 
 #include <3ds/ndsp/ndsp.h>
 #include <3ds/ndsp/channel.h>
 
+#include <3ds/applets/swkbd.h>
+
 #include <3ds/sdmc.h>
 #include <3ds/romfs.h>
+#include <3ds/font.h>
 
 #ifdef __cplusplus
 }
@@ -79,6 +88,7 @@ extern "C" {
  * @example graphics/printing/both-screen-text/source/main.c
  * @example graphics/printing/colored-text/source/main.c
  * @example graphics/printing/multiple-windows-text/source/main.c
+ * @example graphics/printing/system-font/source/main.c
  * @example graphics/gpu/fragment_light/source/main.c
  * @example graphics/gpu/geoshader/source/main.c
  * @example graphics/gpu/gpusprites/source/main.c
@@ -96,4 +106,4 @@ extern "C" {
  * @example threads/event/source/main.c
  * @example time/rtc/source/main.c
  */
- 
+

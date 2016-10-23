@@ -9,7 +9,7 @@ int main(void)
 	x2 = 200;
 	y1 = 100;
 	y2 = 200;
-	PrintConsole topScreen;
+	PrintConsole	topScreen;
 	gfxInitDefault();
 	//gfxSet3D(true); // uncomment if using stereoscopic 3D
 
@@ -33,7 +33,7 @@ int main(void)
 			break; // break in order to return to hbmenu
 		// Example rendering code that displays a white pixel
 		// Please note that the 3DS screens are sideways (thus 240x400 and 240x320)
-		u8* fb = gfxGetFramebuffer(GFX_BOTTOM, GFX_LEFT, NULL, NULL);
+		u8	*fb = gfxGetFramebuffer(GFX_BOTTOM, GFX_LEFT, NULL, NULL);
 		draw_rect(fb, x1, x2, y1, y2);
 		if (kDown & KEY_SELECT)
 			clear_image(fb);

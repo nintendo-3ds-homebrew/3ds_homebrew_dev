@@ -1,170 +1,200 @@
 main.o: \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/first_app/source/main.c \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/first_app/source/../lib3dsft/include/lib3dsft.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/types.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/result.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ipc.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/svc.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/srv.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/os.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/synchronization.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/thread.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gfx.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gspgpu.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/console.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/env.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/util/utf.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/linear.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/mappable.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/vram.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ac.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/am.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/apt.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cam.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/y2r.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgnor.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgu.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/csnd.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/dsp.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/fs.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gsplcd.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hid.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/irrst.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/httpc.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ir.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ns.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/pm.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ps.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmu.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmsysm.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/soc.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mic.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mvd.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/news.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/qtm.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/srvpm.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hb.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gx.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gpu.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/registers.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/enums.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gpu-old.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shbin.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shaderProgram.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/ndsp.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/channel.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/sdmc.h \
- /nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/romfs.h
+ /Users/rabougue/Documents/3ds_homebrew_dev/first_app/source/main.c \
+ /Users/rabougue/Documents/3ds_homebrew_dev/first_app/source/../include/lib3dsft.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/types.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/result.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ipc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/svc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/srv.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/errf.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/os.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/synchronization.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/thread.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gfx.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gspgpu.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/console.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/env.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/util/utf.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/linear.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/mappable.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/vram.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ac.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/am.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/fs.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ampxi.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/apt.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cam.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/y2r.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgnor.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgu.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/csnd.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/dsp.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gsplcd.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hid.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/irrst.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/sslc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/httpc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/uds.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ndm.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ir.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ns.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/pm.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ps.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmu.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmsysm.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/pxidev.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/soc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/netinet/in.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/sys/socket.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mic.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mvd.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/nfc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/news.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/qtm.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/srvpm.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hb.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gx.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gpu.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/registers.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/enums.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shbin.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shaderProgram.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/ndsp.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/channel.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/applets/swkbd.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/sdmc.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/romfs.h \
+ /Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/font.h
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/first_app/source/../lib3dsft/include/lib3dsft.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/first_app/source/../include/lib3dsft.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/types.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/types.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/result.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/result.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ipc.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ipc.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/svc.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/svc.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/srv.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/srv.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/os.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/errf.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/synchronization.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/os.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/thread.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/synchronization.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gfx.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/thread.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gspgpu.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gfx.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/console.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gspgpu.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/env.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/console.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/util/utf.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/env.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/linear.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/util/utf.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/mappable.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/linear.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/vram.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/mappable.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ac.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/allocator/vram.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/am.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ac.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/apt.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/am.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cam.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/fs.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/y2r.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ampxi.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgnor.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/apt.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgu.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cam.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/csnd.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/y2r.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/dsp.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgnor.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/fs.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/cfgu.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gsplcd.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/csnd.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hid.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/dsp.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/irrst.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/gsplcd.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/httpc.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hid.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ir.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/irrst.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ns.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/sslc.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/pm.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/httpc.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ps.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/uds.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmu.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ndm.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmsysm.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ir.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/soc.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ns.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mic.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/pm.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mvd.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ps.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/news.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmu.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/qtm.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/ptmsysm.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/srvpm.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/pxidev.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hb.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/soc.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gx.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/netinet/in.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gpu.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/sys/socket.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/registers.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mic.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/enums.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/mvd.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gpu-old.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/nfc.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shbin.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/news.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shaderProgram.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/qtm.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/ndsp.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/srvpm.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/channel.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/services/hb.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/sdmc.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gx.h:
 
-/nfs/2015/r/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/romfs.h:
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/gpu.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/registers.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/enums.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shbin.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/gpu/shaderProgram.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/ndsp.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/ndsp/channel.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/applets/swkbd.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/sdmc.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/romfs.h:
+
+/Users/rabougue/Documents/3ds_homebrew_dev/devkitPro/libctru/include/3ds/font.h:
