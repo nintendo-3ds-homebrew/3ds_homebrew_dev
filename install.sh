@@ -52,12 +52,12 @@ echo "\n========================================================================
 printf "sf2dlib installed [\033[32mOK\033[0m]\n"
 echo "=========================================================================\n"
 
-rm -fr ~/devkitPro/3ds_portlibs
-git clone https://github.com/xerpi/3ds_portlibs.git ~/devkitPro/3ds_portlibs
-make all -C ~/devkitPro/3ds_portlibs
-echo "========================================================================="
-printf "Portlibs installed [\033[32mOK\033[0m]\n"
-echo "=========================================================================\n"
+#rm -fr ~/devkitPro/3ds_portlibs
+#git clone https://github.com/xerpi/3ds_portlibs.git ~/devkitPro/3ds_portlibs
+#make all -C ~/devkitPro/3ds_portlibs
+#echo "========================================================================="
+#printf "Portlibs installed [\033[32mOK\033[0m]\n"
+#echo "=========================================================================\n"
 
 rm -fr ~/devkitPro/sfillib
 git clone https://github.com/xerpi/sfillib.git ~/devkitPro/sfillib
@@ -67,8 +67,8 @@ printf "sfillib installed [\033[32mOK\033[0m]\n"
 echo "=========================================================================\n"
 
 rm -fr ~/devkitPro/sftdlib
-git clone https://github.com/xerpi/sfillib.git ~/devkitPro/sftdlib
-make install -C ~/devkitPro/sftlib/libsftd/
+git clone https://github.com/xerpi/sftdlib.git ~/devkitPro/sftdlib
+make install -C ~/devkitPro/sftdlib/libsftd/
 echo "\n========================================================================="
 printf "sftdlib installed [\033[32mOK\033[0m]\n"
 echo "=========================================================================\n"
