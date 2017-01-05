@@ -1,4 +1,4 @@
-#!bin/sh
+#!bin/zsh
 
 chmod +x ./devkitARMupdate.pl
 echo "chmod +x ./devkitARMupdate.pl [\033[32mOK\033[0m]"
